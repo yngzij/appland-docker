@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  resources:
+    container_name: resources
+    image: f886188ef8b661bb3c5bba9f80799e16554c78369fbaf6d1f5171a448972478a
+
+  web:
+    container_name: web
+    image: 7fe21d4dccf2
+    ports:
+      - "4000:3000"
+    depends_on:
+      - resources
+    command: rails s
+
+
+
+
